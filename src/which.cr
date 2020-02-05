@@ -30,12 +30,12 @@ end
 # Returns a Path representing the absolute path of the given command, or `nil`
 # if it wasn't found in any of the directories in the $PATH enviroment variable.
 def which?(command : Path | String) : Path?
-  Which.executable? path
+  Which.executable? command
 end
 
 # Returns a Path representing the absolute path of the given command, or raises
 # a `Which::ExecutableNotFound` if it wasn't found in any of the directories in
 # the $PATH enviroment variable.
-def which(path : Path | String) : Path
-  Which.executable path
+def which(command : Path | String) : Path
+  Which.executable command
 end
